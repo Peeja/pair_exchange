@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+original_commit=$(git rev-list -1 HEAD)
+without_psych_in_gemfile="e88e8b0"
+with_psych_in_gemfile="bb6da64"
+
+echo "Without psych in gemfile:"
+git checkout $without_psych_in_gemfile
+bundle install
+bundle exec rails runner ';'
+
+echo
+echo -----
+echo
+
+echo "With psych in gemfile:"
+git checkout $without_psych_in_gemfile
+bundle install
+bundle exec rails runner ';'
+
+git checkout $original_commit
