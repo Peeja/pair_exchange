@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+# Rails v3.2.12 is a security release.
+# http://weblog.rubyonrails.org/2013/2/11/SEC-ANN-Rails-3-2-12-3-1-11-and-2-3-17-have-been-released/
+gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 gem 'jquery-rails'
